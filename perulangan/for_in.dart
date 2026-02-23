@@ -1,5 +1,5 @@
 void main() {
-  var cemilan = ["Comro", "Gehu", "Cireng", "Cilok", "Javascript"];
+  var cemilan = ["Comro", "Gehu", "Cireng", "Cilok"];
   print("Daftar Cemilan ");
   print("---------------");
   for (var makanan in cemilan) {
