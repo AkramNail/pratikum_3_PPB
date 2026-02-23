@@ -299,7 +299,7 @@ void menuMengembalikanBuku(List<Peminjaman> listPeminjaman, List<Buku> listBuku,
   listPeminjaman.forEach((data){
     if(data.nim == mahasiswa.nim){
       nomor += 1;
-      print("${nomor}.Judu; Buku: ${data.judul}");
+      print("${nomor}.Judul Buku: ${data.judul}");
       listIndexBukuYangDipinjam.add(indexBuku);
       isKetemuDataPeminjaman = true;
     }
@@ -348,8 +348,10 @@ void menuMenampilkanListMahasiswa(List<Mahasiswa> listMahasiswa){
     print("$nomor$nama: ${Mahasiswa.nama}");
     print("   $nim: ${Mahasiswa.nim}");
 
-    index++;
   });
+  if(index == 0){
+    print("sepertinya belum ada data mahasiswa harap tambah data mahasiswa terlebih dahulu");
+  }
 }
 
 void menuMenampilkanListBuku(List<Buku> listBuku){
@@ -370,6 +372,9 @@ void menuMenampilkanListBuku(List<Buku> listBuku){
     print("   $stock: ${buku.stock}");
 
   });
+  if(index == 0){
+    print("sepertinya belum ada data buku harap tambah data buku terlebih dahulu");
+  }
 }
 
 void menuMenampilkanListPeminjam(List<Peminjaman> listPeminjaman){
@@ -390,6 +395,9 @@ void menuMenampilkanListPeminjam(List<Peminjaman> listPeminjaman){
     print("   $id: ${peminjam.id}");
     print("   $judul: ${peminjam.judul}");
   });
+  if(index == 0){
+    print("sepertinya belum ada data peminjaman harap tambah data peminjaman terlebih dahulu");
+  }
 }
 
 bool menampilkanDaftarMenu(List<Peminjaman> listPeminjaman, List<Mahasiswa> listMahasiswa, List<Buku> listBuku){
@@ -459,14 +467,14 @@ void main(){
   List<Buku> listBuku = [
     new Buku("001", "RTX", "Yanto", 15),
     new Buku("002", "Death man", "Asep", 16),
-    new Buku("003", "Life in ngawi", "Si imut", 15),
+    new Buku("003", "Life in GTA", "Si imut", 15),
   ];
   List<Mahasiswa> listMahasiswa = [
     new Mahasiswa("01389", "si imut"),
     new Mahasiswa("01380", "Dustin"),
   ];
   List<Peminjaman> listPeminjaman = [
-    new Peminjaman("01380", "Dustin", "003", "Life in ngawi"),
+    new Peminjaman("01380", "Dustin", "003", "Life in GTA"),
     new Peminjaman("01389", "si imut", "002", "Death man"),
     new Peminjaman("01380", "Dustin", "001", "RTX"),
   ];
@@ -478,6 +486,6 @@ void main(){
   List<Peminjaman> listPeminjaman = [];
 
   while(isNotStillInMenu == false){
-    menampilkanDaftarMenu(listPeminjaman, listMahasiswa, listBuku);
+    isNotStillInMenu = menampilkanDaftarMenu(listPeminjaman, listMahasiswa, listBuku);
   }
 }
