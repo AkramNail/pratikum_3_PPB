@@ -5,8 +5,4 @@ void main() {
   print(hasil);
 }
 
-int calculate(var angkapertama, var angkakedua) {
-  var hasilperhitungan;
-  hasilperhitungan = angkapertama * angkakedua;
-  return hasilperhitungan;
-}
+int calculate(var angkapertama, var angkakedua) => angkapertama * angkakedua;

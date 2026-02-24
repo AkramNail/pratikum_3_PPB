@@ -10,10 +10,6 @@ void main() {
   }
 }
 
-void eat(var nama) {
-  print('$nama sedang makan.');
-}
+void eat(var nama) => print('$nama sedang makan.');
 
-void play(var nama) {
-  print('$nama sedang main.');
-}
+void play(var nama) => print('$nama sedang main.');
